@@ -1,13 +1,14 @@
 import express from 'express';
 import { videosRouter } from './routes/videosRouter';
+import { testingRouter } from './routes/testingRouter';
 
 const app = express();
 app.use(express.json());
 
-// Все роуты
-app.use('/hometask_01/api/videos', videosRouter);
-
-// Корень можно просто вернуть что-то
-app.get('/', (req, res) => res.send('API работает'));
+app.use('/videos', videosRouter);
+app.use('/testing/all-data', testingRouter);
 
 export { app };
+
+// для хранения видео в памяти
+global.videos = global.videos || [];

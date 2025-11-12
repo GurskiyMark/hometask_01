@@ -4,6 +4,8 @@
     { "src": "src/index.ts", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/hometask_01/api/(.*)", "dest": "src/index.ts" }
+    { "src": "/videos", "dest": "src/index.ts" },
+    { "src": "/videos/(.*)", "dest": "src/index.ts" },
+    { "src": "/testing/all-data", "dest": "src/index.ts" }
   ]
 }
